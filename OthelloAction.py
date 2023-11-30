@@ -1,16 +1,13 @@
 import random
+from typing import List
 
-"""
-引数について
 
-board:現在の盤面の状態
-moves:現在の合法手の一覧
+def getAction(board, moves) -> List[int]:
+    # 自分のターンにフロントエンドから呼ばれるメソッド
+    return select_random_moves(moves)
 
-詳しい説明はサイトのHomeページをご覧ください。
 
-"""
-
-def getAction(board,moves):
-	#渡されたMovesの中からランダムで返り値として返却する。
-	index = random.randrange(len(moves))
-	return moves[index]
+def select_random_moves(moves) -> List[int]:
+    # 渡されたMovesの中からランダムで返り値として返却する。
+    index = random.randrange(len(moves))
+    return moves[index]
